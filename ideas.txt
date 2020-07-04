@@ -1,0 +1,11 @@
+Deploy:
+    - Deploy trên google
+    - Flask server trên notebook
+    - Front-end làm bằng react
+    - Back-end làm bằng python
+
+Giao diện:
+    - Vài dòng về đặt tả bài toán
+    - Dựa trên dataset nào
+    - Có thêm mấy cái hình so sánh
+    - Có chỗ up cái file

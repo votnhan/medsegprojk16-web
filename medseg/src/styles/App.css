@@ -1,0 +1,42 @@
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+/* Homepage */
+.my-grid {
+  background-image: url('../images/fitbackground.jpeg');
+  min-height: 100%;
+}
+
+.my-form {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243b55, #141e30);
+  padding: 1.5em;
+  margin: 2em;
+  border-radius: 0.8em;
+}
+
+.radio-label {
+  font-size: 17px;
+  color: white;
+}
