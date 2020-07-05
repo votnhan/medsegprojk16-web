@@ -1,11 +1,26 @@
 import os
-import tensorflow as tf
-import keras.backend as K
 from flask import Blueprint, request, session, jsonify, send_file
 from model.unet3d.training import load_old_model
 from model.predict import generate_predition_case
 from model.export import gif_export_subject
 from .utils import check_key_existence
+
+import tensorflow as tf
+import keras.backend.tensorflow_backend as tfback
+
+def _get_available_gpus():
+    """Get a list of available gpu devices (formatted as strings).
+
+    # Returns
+        A list of available GPU devices.
+    """
+    #global _LOCAL_DEVICES
+    if tfback._LOCAL_DEVICES is None:
+        devices = tf.config.list_logical_devices()
+        tfback._LOCAL_DEVICES = [x.name for x in devices]
+    return [x for x in tfback._LOCAL_DEVICES if 'device:gpu' in x.lower()]
+
+tfback._get_available_gpus = _get_available_gpus
 
 api_pred = Blueprint('api_pred', 'api_pred', url_prefix='/api-pred')
 

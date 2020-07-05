@@ -1,5 +1,8 @@
+# for demo with colab
+# from flask_ngrok import run_with_ngrok
+
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv('env.txt')
 
 from flask import Flask
 from blueprint.homepage import api_hp
