@@ -66,6 +66,8 @@ def normalize_data(input_tensor):
     return result
 
 def predict(model, image_tensor, affine):
+    import keras.backend.tensorflow_backend as tfb
+    tfb._SYMBOLIC_SCOPE.value = True
     result = model.predict(image_tensor)
     image_label = prediction_to_image(result, affine, label_map=True, labels=labels)
     return image_label
